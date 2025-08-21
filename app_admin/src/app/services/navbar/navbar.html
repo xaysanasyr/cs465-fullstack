@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <!-- Brand Logo -->
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/logo.png" alt="Travlr Getaways Logo">
+  </a>
+
+  <!-- Mobile Toggler (collapses nav on small screens) -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible Navbar Content -->
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!-- Trips Link -->
+      <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Trips
+      </a>
+    </div>
+  </div>
+
+  <!-- Right-side login/logout controls -->
+  <div class="ml-auto d-flex align-items-center">
+    <!-- Show "Log In" only when not authenticated -->
+    <a class="nav-item nav-link" routerLink="login" *ngIf="!isLoggedIn()">
+      <span class="has-icon-left">Log In</span>
+    </a>
+
+    <!-- Show "Log Out" only when authenticated -->
+    <a class="nav-item nav-link" (click)="onLogout()" *ngIf="isLoggedIn()">
+      <span class="has-icon-left">Log Out</span>
+    </a>
+  </div>
+</nav>
